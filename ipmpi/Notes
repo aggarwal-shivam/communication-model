@@ -1,0 +1,15 @@
+1) Makefile:
+For Eg:
+a)
+all: library.cpp main.cpp
+ $@ evaluates to all                        => Name of the file being generated[Normally]
+ $< evaluates to library.cpp                => First prereq
+ $^ evaluates to library.cpp main.cpp       
+b) .PHONY: A phony target is one that is not really the name of a file. It is just a name for some commands 
+to be executed when you make an explicit request. There are two reasons to use a phony target: 
+- to avoid a conflict with a file of the same name, and 
+- to improve performance.
+Eg: .PHONY: clean
+clean:
+    rm -r -f *.o
+2)
